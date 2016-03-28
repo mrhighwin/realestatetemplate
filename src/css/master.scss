@@ -1,0 +1,82 @@
+.table th{
+	text-align: center;
+}
+.table td{
+	text-align: center;
+}
+.striked {
+	text-decoration: line-through;
+}
+
+/*for property*/
+.list-image {
+	margin-bottom: 10px;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.glyphicon-large {
+	font-size: 18em;
+	margin-top: 20px;
+}
+
+.margin-increase{
+	margin-bottom: 20px
+}
+
+.g-size{
+	font-size: 5em;
+}
+.v-align{
+	margin-top: 150px;
+}
+
+.selectedImage {
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.confirm {
+	background-color: green;
+}
+
+
+/*************************************************************************sign in sign ou*/
+
+
+.glyphicon.glyphicon-heart {
+	font-size: 100px;
+}
+
+.glyphicon-heart:hover{
+	color: red;
+	cursor: pointer;
+	font-size: 110px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<navigate-bar cur-sec='tab'></navigate-bar>
+<div class="container">
+    <h3>Todo List</h3>
+    <form class='input-group' ng-submit="formSubmit()" name='myForm'>
+        <input name='myInput' type="text" class='form-control' ng-model='userInput' ng-change='fakeLoad()' placeholder="What do I need to do.." required>
+        <span class='input-group-btn'>
+	    	<button class='btn btn-success'>Add</button>
+    	</span>
+    </form>
+    <table class='table table-striped todo-table'>
+        <tr>
+            <th>Status</th>
+            <th>Item</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="todo in todos">
+            <td>
+                <input type="checkbox" ng-click='checkItem(todo)' ng-disabled="myForm.myInput.$valid&&$last" ng-checked='todo.checked'>
+            </td>
+            <td ng-class='{striked:todo.checked}'>{{todo.description}}</td>
+            <td>
+                <button class='btn btn-danger' ng-click='remove(todo)' ng-disabled="myForm.myInput.$valid&&$last">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+<navigate-bar cur-sec='tab'></navigate-bar>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <form class="input-group" ng-submit='getList()'>
+                <input type="text" class="form-control" ng-model='input' ng-change='checkLength()' maxlength="5">
+                <span class="input-group-btn">
+			<button class="btn btn-success">
+			<span ng-show='!loading'>Type in zipcode...</span>
+                <span ng-show='loading' class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                <span ng-show='loading'>Loading...</span>
+                </button>
+                </span>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-show='loading' class='col-lg-2 col-lg-offset-5'>
+            <span ng-show='loading' class="glyphicon glyphicon-refresh glyphicon-refresh-animate glyphicon-large"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="property in properties track by $index">
+                        <a ng-href='/property/detail/{{property.id}}'>
+                            <span class='pull-right image-list'><img ng-src='{{property.imageUrl}}' class='img-rounded img-responsive' /></span>
+                            <span>
+                        <h4>{{property.street}}</h4>
+                        <p>{{property.description}}</p>
+                        <p>{{property.price}}</p>
+                        <p>{{property.id}}</p>
+                    </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

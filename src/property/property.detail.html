@@ -1,0 +1,61 @@
+<navigate-bar cur-sec='tab'></navigate-bar>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-2 v-align">
+                    <a>
+                        <span class='glyphicon glyphicon-chevron-left g-size' ng-click="prev()"></span>
+                    </a>
+                </div>
+                <div class="col-lg-8 margin-increase">
+                    <img src="http://placehold.it/800x600" class='img-responsive' alt="">
+                </div>
+                <div class="col-lg-2 v-align">
+                    <a>
+                        <span class='glyphicon glyphicon-chevron-right g-size' ng-click='next()'></span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3" ng-repeat="image in model.images track by $index">
+                    <img ng-src="{{image}}" class='img-responsive margin-increase' ng-click='changeCurrent($index)' ng-class='{selectedImage: selected[$index]}' alt="">
+                </div>
+            </div>
+            <div class="row">
+                <ul>
+                    <li ng-repeat="number in numbers">number</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1">
+                    school rating
+                    <button ng-click='getSchoolRating()'>Get Rating</button>
+                    <h4>Average School Rating: {{averageSchoolRating}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+        <div class="row">
+            <h2>Mortgages Calculation</h2>
+            <label for="housePrice">House Price: {{housePrice}}</label>
+            <label for="down">Percent Down:
+                <input type="text" ng-model='downPayment' ng-change='dataChange()'>
+            </label>
+            <label for="interest">Interest Rate:
+                <input type="text" ng-model='interest' ng-change='dataChange()'>
+            </label>
+            <select ng-model='year' ng-change='dataChange()'>
+                <option value="15">15 years</option>
+                <option value="30">30 years</option>
+            </select>
+            <label for="payment">Your Estimate Payment: ${{monthPayment}}</label>
+        </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <span class="glyphicon glyphicon-heart" ng-click='addProperty()'></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

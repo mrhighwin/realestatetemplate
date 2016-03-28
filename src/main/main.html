@@ -1,0 +1,28 @@
+<navigate-bar cur-sec='tab'></navigate-bar>
+<div class="row">
+	<div ng-show='!user' class='col-lg-6 col-lg-offset-3'>
+		<h1>Please sign in to see your list...</h1>
+	</div>
+	<div ng-show='user' class="col-lg-6 col-lg-offset-3">
+	<h1>The following is your favorite list:</h1>
+	</div>
+	<div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="property in savedProperties track by $index">
+                        <a ng-href='/property/detail/{{property}}'>
+                            <span class='pull-right image-list'><img ng-src='{{property}}' class='img-rounded img-responsive' /></span>
+                            <span>
+                        <h4>{{property}}</h4>
+                        <p>{{property}}</p>
+                        <p>{{property}}</p>
+                        <p>{{property}}</p>
+                    </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
